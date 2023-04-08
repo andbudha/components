@@ -8,19 +8,22 @@ function App() {
             <Button primary>PRIMARY</Button>
         </div>
         <div>
-            <Button>SECONDARY</Button>
+            <Button secondary>SECONDARY</Button>
         </div>
         <div>
-            <Button>SUCCESS</Button>
+            <Button success>SUCCESS</Button>
         </div>
         <div>
-            <Button>WARNING</Button>
+            <Button warning>WARNING</Button>
         </div>
         <div>
-            <Button>DANGER</Button>
+            <Button danger>DANGER</Button>
         </div>
         <div>
-            <Button>ROUNDED</Button>
+            <Button rounded>ROUNDED</Button>
+        </div>
+        <div>
+            <Button outlined>OUTLINED</Button>
         </div>
     </div>
   );
