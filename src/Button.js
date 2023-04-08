@@ -15,7 +15,7 @@ export const Button = ({
                        }) => {
     return (
         <div>
-            <button>{children}</button>
+            <button className={'px-3 py-1.5 border border-blue-700 bg-blue-500 text-white'}>{children}</button>
         </div>
     );
 };
