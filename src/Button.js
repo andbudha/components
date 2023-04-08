@@ -18,7 +18,9 @@ export const Button = ({
         'border-gray-900 bg-gray-900 text-white': secondary,
         'border-green-500 bg-green-500 text-white': success,
         'border-yellow-400 bg-yellow-400 text-white': warning,
-        'border-red-500 bg-red-500 text-white': danger
+        'border-red-500 bg-red-500 text-white': danger,
+        'rounded-full': rounded,
+        'bg-white': outlined
     });
     return (
         <div>
@@ -28,11 +30,13 @@ export const Button = ({
 };
 
 Button.propTypes = {
-    checkVariationValue: ({ primary, secondary, success, warning, danger})=>{
+    checkVariationValue: ({ primary, secondary, success, warning, danger, rounded, outlined})=>{
         const count = Number(!!primary)
         + Number(!!secondary)
         + Number(!!success)
         + Number(!!warning)
+        + Number(!!rounded)
+        + Number(!!outlined)
         + Number(!!danger);
 
         if(count > 1){
