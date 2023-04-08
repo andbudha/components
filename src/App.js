@@ -11,13 +11,16 @@ function App() {
             <Button>SECONDARY</Button>
         </div>
         <div>
-            <Button>NEUTRAL</Button>
+            <Button>SUCCESS</Button>
         </div>
         <div>
             <Button>WARNING</Button>
         </div>
         <div>
             <Button>DANGER</Button>
+        </div>
+        <div>
+            <Button>ROUNDED</Button>
         </div>
     </div>
   );
