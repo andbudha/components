@@ -10,7 +10,8 @@ export const Button = ({
                            warning,
                            danger,
                            outlined,
-                           rounded
+                           rounded,
+                           ...rest
                        }) => {
 
     const classes = classnames('flex items-center px-3 py-1.5 border',{
@@ -24,7 +25,7 @@ export const Button = ({
     });
     return (
         <div>
-            <button className={classes}>{children}</button>
+            <button {...rest} className={classes}>{children}</button>
         </div>
     );
 };
@@ -32,12 +33,12 @@ export const Button = ({
 Button.propTypes = {
     checkVariationValue: ({ primary, secondary, success, warning, danger, rounded, outlined})=>{
         const count = Number(!!primary)
-        + Number(!!secondary)
-        + Number(!!success)
-        + Number(!!warning)
-        + Number(!!rounded)
-        + Number(!!outlined)
-        + Number(!!danger);
+            + Number(!!secondary)
+            + Number(!!success)
+            + Number(!!warning)
+            + Number(!!rounded)
+            + Number(!!outlined)
+            + Number(!!danger);
 
         if(count > 1){
             return new Error('Only one of primary, secondary, success, warning, danger can be true');
