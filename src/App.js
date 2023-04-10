@@ -1,34 +1,31 @@
-import {Button} from "./components/Button";
-import { GoBell, GoBug, GoCheck, GoDatabase, GoIssueOpened, GoMarkGithub, GoSearch } from "react-icons/go";
+import {Accordion} from "./components/Accordion";
 
 
 function App() {
 
-  return (
-    <div>
+    const items = [
+        {
+            id: Math.random(),
+            label: 'Can I use React in a project?',
+            content: 'You can use React in any project you want.'
+        },
+        {
+            id: Math.random(),
+            label: 'Can I use JS in a project?',
+            content: 'You can use JS in any project you want.'
+        },
+        {
+            id: Math.random(),
+            label: 'Can I use CSS in a project?',
+            content: 'You can use CSS in any project you want.'
+        }
+    ]
+
+    return (
         <div>
-            <Button primary> <GoBell/> PRIMARY</Button>
+            <Accordion items={items}/>
         </div>
-        <div>
-            <Button secondary><GoDatabase/>SECONDARY</Button>
-        </div>
-        <div>
-            <Button success><GoCheck/>SUCCESS</Button>
-        </div>
-        <div>
-            <Button warning><GoIssueOpened/>WARNING</Button>
-        </div>
-        <div>
-            <Button danger><GoBug/>DANGER</Button>
-        </div>
-        <div>
-            <Button rounded><GoMarkGithub/>ROUNDED</Button>
-        </div>
-        <div>
-            <Button outlined><GoSearch/>OUTLINED</Button>
-        </div>
-    </div>
-  );
+    );
 }
 
 export default App;
