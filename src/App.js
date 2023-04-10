@@ -1,29 +1,30 @@
 import {Button} from "./Button";
+import { GoBell, GoBug, GoCheck, GoDatabase, GoIssueOpened, GoMarkGithub, GoSearch } from "react-icons/go";
 
 
 function App() {
   return (
     <div>
         <div>
-            <Button primary>PRIMARY</Button>
+            <Button primary> <GoBell/> PRIMARY</Button>
         </div>
         <div>
-            <Button secondary>SECONDARY</Button>
+            <Button secondary><GoDatabase/>SECONDARY</Button>
         </div>
         <div>
-            <Button success>SUCCESS</Button>
+            <Button success><GoCheck/>SUCCESS</Button>
         </div>
         <div>
-            <Button warning>WARNING</Button>
+            <Button warning><GoIssueOpened/>WARNING</Button>
         </div>
         <div>
-            <Button danger>DANGER</Button>
+            <Button danger><GoBug/>DANGER</Button>
         </div>
         <div>
-            <Button rounded>ROUNDED</Button>
+            <Button rounded><GoMarkGithub/>ROUNDED</Button>
         </div>
         <div>
-            <Button outlined>OUTLINED</Button>
+            <Button outlined><GoSearch/>OUTLINED</Button>
         </div>
     </div>
   );
