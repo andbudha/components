@@ -9,11 +9,12 @@ export const Accordion = ({ items }) => {
 
     const renderedItems = items.map((item, index)=>{
         const isExpanded = index === expandedIndex;
-        console.log(isExpanded);
+
+        const content = isExpanded && <div>{item.content}</div>;
         return(
             <div key={item.id}>
                 <div onClick={()=>setExpandedIndex(index)}>{item.label}</div>
-                {isExpanded ?  <div>{item.content}</div> : ''}
+                {content}
             </div>
         );
     });
