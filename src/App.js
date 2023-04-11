@@ -5,17 +5,17 @@ function App() {
 
     const items = [
         {
-            id: Math.random(),
+            id: 'hj44hj',
             label: 'Can I use React in a project?',
             content: 'You can use React in any project you want.'
         },
         {
-            id: Math.random(),
+            id: 'nmn2121',
             label: 'Can I use JS in a project?',
             content: 'You can use JS in any project you want.'
         },
         {
-            id: Math.random(),
+            id: '321ghghn',
             label: 'Can I use CSS in a project?',
             content: 'You can use CSS in any project you want.'
         }
