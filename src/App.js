@@ -1,7 +1,16 @@
 import {DropDown} from "./components/DropDown";
+import {useState} from "react";
 
 
 function App() {
+
+    //selection state
+    const [selection, setSelection]=useState(null);
+
+    //selection updating func
+    const handleSelect = (option) => {
+        setSelection(option);
+    };
 
     const options = [
         {label: 'Red', value: 'red'},
@@ -11,7 +20,7 @@ function App() {
 
     return (
         <div>
-            <DropDown options={options}/>
+            <DropDown options={options} selection={selection} onSelect={handleSelect}/>
         </div>
     );
 }
