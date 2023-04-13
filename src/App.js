@@ -20,7 +20,7 @@ function App() {
 
     return (
         <div>
-            <DropDown options={options} selection={selection} onSelect={handleSelect}/>
+            <DropDown options={options} value={selection} onChange={handleSelect}/>
         </div>
     );
 }
