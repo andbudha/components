@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { HiChevronLeft, HiChevronDown } from "react-icons/hi";
 
 export const DropDown = ({options, value, onChange}) => {
 
@@ -32,13 +33,15 @@ export const DropDown = ({options, value, onChange}) => {
         );
     });
 
+    //icon display conditioning
+    const icon = !isOpen ? <HiChevronLeft className={'text-xl'}/> : <HiChevronDown className={'text-xl'}/>;
 
     return (
         <div className={'w-48 relative m-3'}>
             <div
                 onClick={handleClick}
                 className={'flex justify-between items-center cursor-pointer border rounded p-3 shadow bg-white w-full'}
-            >{value?.label || 'Select...'}</div>
+            >{value?.label || 'Select...'} {icon}</div>
             {isOpen && <div className={'absolute top-full border rounded p-3 shadow bg-white w-full'}>{renderedOptions}</div>}
         </div>
     );
