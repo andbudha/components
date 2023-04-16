@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import { HiChevronLeft, HiChevronDown } from "react-icons/hi";
+import {Panel} from "./Panel";
 
 export const DropDown = ({options, value, onChange}) => {
 
@@ -38,11 +39,12 @@ export const DropDown = ({options, value, onChange}) => {
 
     return (
         <div className={'w-48 relative m-3'}>
-            <div
+            <Panel
                 onClick={handleClick}
-                className={'flex justify-between items-center cursor-pointer border rounded p-3 shadow bg-white w-full'}
-            >{value?.label || 'Select...'} {icon}</div>
-            {isOpen && <div className={'absolute top-full border rounded p-3 shadow bg-white w-full'}>{renderedOptions}</div>}
+                className={'flex justify-between items-center cursor-pointer'}
+            >{value?.label || 'Select...'} {icon}
+            </Panel>
+            {isOpen && <Panel className={'absolute top-full'}>{renderedOptions}</Panel>}
         </div>
     );
 };
