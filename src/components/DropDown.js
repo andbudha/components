@@ -1,11 +1,31 @@
-import React, {useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import { HiChevronLeft, HiChevronDown } from "react-icons/hi";
 import {Panel} from "./Panel";
 
 export const DropDown = ({options, value, onChange}) => {
 
+
     //drop-down operating state
     const [isOpen, setIsOpen]=useState(false);
+
+    //getting a reference with useRef
+    const divEl = useRef();
+
+    //checking on useEffect();
+    useEffect(()=>{
+        const handler = (event) =>{
+            if(!divEl.current.contains(event.target)){
+                setIsOpen(false);
+            }
+        };
+
+        document.addEventListener('click', handler, true);
+
+        return ()=> {
+            document.removeEventListener('click', handler);
+        };
+    }, []);
+
 
     //drop-down operating func
     const handleClick = () => {
@@ -33,12 +53,12 @@ export const DropDown = ({options, value, onChange}) => {
             </div>
         );
     });
-
+    
     //icon display conditioning
     const icon = !isOpen ? <HiChevronLeft className={'text-xl'}/> : <HiChevronDown className={'text-xl'}/>;
 
     return (
-        <div className={'w-48 relative m-3'}>
+        <div ref={divEl} className={'w-48 relative m-3'}>
             <Panel
                 onClick={handleClick}
                 className={'flex justify-between items-center cursor-pointer'}
