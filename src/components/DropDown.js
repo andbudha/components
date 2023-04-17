@@ -14,6 +14,12 @@ export const DropDown = ({options, value, onChange}) => {
     //checking on useEffect();
     useEffect(()=>{
         const handler = (event) =>{
+
+            //checking if there is a reference to the element. This solves a lot of bugs.
+            if(!divEl.current){
+                return;
+            }
+
             if(!divEl.current.contains(event.target)){
                 setIsOpen(false);
             }
